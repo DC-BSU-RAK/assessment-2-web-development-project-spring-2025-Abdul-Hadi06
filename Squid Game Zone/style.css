@@ -1,0 +1,822 @@
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(-45deg, #111, #1a001a, #330033, #111);
+  background-size: 400% 400%;
+  animation: bgAnim 15s ease infinite;
+  color: #fff;
+  overflow-x: hidden;
+}
+
+@keyframes bgAnim {
+  0% {background-position: 0% 50%;}
+  50% {background-position: 100% 50%;}
+  100% {background-position: 0% 50%;}
+}
+
+/* Header and Nav */
+header {
+  background-color: #e60073;
+  padding: 1rem;
+  text-align: center;
+  position: relative;
+  z-index: 10;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 2.7rem;
+  letter-spacing: 2px;
+  color: #fff;
+  text-shadow: 0 0 8px #000;
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+  margin-top: 1rem;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+nav li {
+  margin: 0 15px;
+}
+
+@keyframes navFloat {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-5px); }
+}
+
+nav li {
+  animation: navFloat 4s ease-in-out infinite;
+}
+
+nav a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+  transition: all 0.3s;
+}
+
+nav a.active,
+nav a:hover {
+  color: #000;
+  background: #fff;
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+
+/* Hero Section */
+.hero-v2 {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 5rem 2rem;
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+.hero-v2::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: -80px;
+  bottom: 0;
+  width: 50%;
+  background-image: url('Images/worker.png');
+  background-repeat: no-repeat;
+  background-position: center right;
+  background-size: contain;
+  opacity: 0.6;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Glassmorphism for Hero Text */
+.hero-left {
+  z-index: 1;
+  max-width: 600px;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 15px;
+  padding: 2rem;
+  animation: slideIn 1.5s ease-out;
+  box-shadow: 0 0 25px rgba(255, 0, 120, 0.3);
+}
+
+@keyframes slideIn {
+  0% {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes typing {
+  from { width: 0; }
+  to { width: 100%; }
+}
+
+@keyframes blink {
+  50% { border-color: transparent; }
+}
+
+.hero-left h2 {
+  overflow: hidden;
+  white-space: nowrap;
+  width: 0;
+  border-right: 3px solid #ff007f;
+  animation:
+    typing 3s steps(20, end) forwards,
+    blink 0.75s step-end infinite;
+}
+
+.hero-left p {
+  font-size: 1.15rem;
+  color: #e6e6e6;
+  margin-bottom: 3.2rem;
+  line-height: 1.6;
+}
+
+/* Glowing Button */
+.explore-btn {
+  background-color: transparent;
+  color: white;
+  padding: 1.4rem 4rem;
+  text-decoration: none;
+  border-radius: 10px;
+  font-weight: bold;
+  font-size: 1.3rem;
+  margin-top: 2rem;
+  border: 2px solid #ff007f;
+  box-shadow: 0 0 20px #ff007f, 0 0 40px #ff007f inset;
+  transition: transform 0.3s ease, box-shadow 0.3s;
+}
+
+@keyframes pulseGlow {
+  0% { box-shadow: 0 0 20px #ff007f; }
+  50% { box-shadow: 0 0 40px #ff007f; }
+  100% { box-shadow: 0 0 20px #ff007f; }
+}
+
+.explore-btn {
+  animation: pulseGlow 2s infinite;
+}
+
+.explore-btn:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 30px #ff007f, 0 0 60px #ff007f inset;
+}
+
+/* Floating Symbols in Background */
+@keyframes float {
+  0% {transform: translateY(0) rotate(0deg);}
+  50% {transform: translateY(-20px) rotate(20deg);}
+  100% {transform: translateY(0) rotate(0deg);}
+}
+
+body::before, body::after {
+  content: '○ △ □';
+  position: absolute;
+  font-size: 4rem;
+  color: rgba(255, 0, 120, 0.1);
+  top: 20%;
+  left: 10%;
+  animation: float 6s infinite ease-in-out;
+  z-index: 0;
+}
+
+body::after {
+  top: 70%;
+  left: 75%;
+  animation-delay: 2s;
+}
+
+.symbols {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  font-size: 3rem;
+  z-index: 0; /* Behind text but in front of background */
+  pointer-events: none;
+  opacity: 0.2; /* Faint look for background feel */
+  animation: float 4s ease-in-out infinite;
+}
+
+.symbols span {
+  margin: 0 10px;
+  color: #ff3385;
+  animation: glowBounce 1.5s infinite ease-in-out;
+  display: inline-block;
+}
+
+.symbols .triangle { animation-delay: 0.3s; }
+.symbols .square   { animation-delay: 0.6s; }
+
+@keyframes glowBounce {
+  0%, 100% {
+    transform: translateY(0);
+    text-shadow: 0 0 10px #ff3385;
+  }
+  50% {
+    transform: translateY(-10px);
+    text-shadow: 0 0 20px #ff3385;
+  }
+}
+
+@keyframes float {
+  0%, 100% { transform: translate(-50%, -50%) translateY(0); }
+  50%      { transform: translate(-50%, -50%) translateY(-10px); }
+}
+
+@keyframes floatDiagonal {
+  0% {
+    transform: translate(0, 0) rotate(0deg);
+    opacity: 0.2;
+  }
+  50% {
+    opacity: 0.4;
+  }
+  100% {
+    transform: translate(200px, -200px) rotate(360deg);
+    opacity: 0.2;
+  }
+}
+
+.spinning-symbol {
+  position: fixed;
+  top: 60%;
+  left: 60%;
+  width: 300px;
+  height: 300px;
+  background-image: url('Images/symbol.png'); /* Use transparent PNG (△ ○ □) */
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  transform: translate(-50%, -50%);
+  opacity: 0.03; /* Very faint */
+  z-index: 0; /* Behind everything */
+  animation: spinSymbol 60s linear infinite;
+  pointer-events: none;
+}
+
+@keyframes spinSymbol {
+  from {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  to {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+
+.floating-mask-icon {
+  position: fixed;
+  top: 20%;
+  left: -10%;
+  z-index: 1;
+  pointer-events: none;
+  opacity: 0.05;
+  animation: float-diagonal 30s linear infinite;
+}
+
+.floating-mask-icon img {
+  height: 300px;
+  width: auto;
+}
+
+@keyframes float-diagonal {
+  0% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+  100% {
+    transform: translate(200vw, 200vh) rotate(360deg);
+  }
+}
+
+.trailer iframe {
+  width: 90%;
+  max-width: 800px;
+  height: 500px;
+  border: 4px solid #ff007f;
+  border-radius: 10px;
+}
+
+.trailer-section {
+  text-align: center;
+  padding: 3rem 1rem;
+}
+
+.players {
+  padding: 2rem;
+  text-align: center;
+}
+
+.players h2 {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  color: #ff007f;
+}
+
+.players-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.card {
+  background-color: #1a1a1a;
+  border: 2px solid #ff007f;
+  border-radius: 12px;
+  width: 250px;
+  padding: 1rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.players-grid .card {
+  animation: fadeInUp 1s ease forwards;
+  opacity: 0; /* Ensures the animation starts from hidden */
+}
+
+.players-grid .card:nth-child(1) {
+  animation-delay: 0.1s;
+}
+.players-grid .card:nth-child(2) {
+  animation-delay: 0.2s;
+}
+.players-grid .card:nth-child(3) {
+  animation-delay: 0.3s;
+}
+.players-grid .card:nth-child(4) {
+  animation-delay: 0.4s;
+}
+.players-grid .card:nth-child(5) {
+  animation-delay: 0.5s;
+}
+.players-grid .card:nth-child(6) {
+  animation-delay: 0.6s;
+}
+.players-grid .card:nth-child(7) {
+  animation-delay: 0.7s;
+}
+.players-grid .card:nth-child(8) {
+  animation-delay: 0.8s;
+}
+
+.card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 15px #ff007f;
+}
+
+.card img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.card h3 {
+  color: #fff;
+  margin: 0.5rem 0;
+}
+
+.card p {
+  font-size: 0.95rem;
+  color: #ccc;
+}
+
+.episodes {
+  padding: 2rem;
+  text-align: center;
+}
+
+.episodes h2 {
+  font-size: 2rem;
+  color: #ff007f;
+  margin-bottom: 2rem;
+}
+
+.episode-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.episode-grid .card {
+  background-color: #1c1c1c;
+  border: 2px solid #ff007f;
+  border-radius: 12px;
+  width: 300px;
+  padding: 1rem;
+  text-align: left;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.episode-grid .card {
+  animation: fadeInUp 1s ease forwards;
+  opacity: 0; /* Ensures the animation starts from hidden */
+}
+
+.episode-grid .card:nth-child(1) {
+  animation-delay: 0.1s;
+}
+.episode-grid .card:nth-child(2) {
+  animation-delay: 0.2s;
+}
+.episode-grid .card:nth-child(3) {
+  animation-delay: 0.3s;
+}
+.episode-grid .card:nth-child(4) {
+  animation-delay: 0.4s;
+}
+.episode-grid .card:nth-child(5) {
+  animation-delay: 0.5s;
+}
+.episode-grid .card:nth-child(6) {
+  animation-delay: 0.6s;
+}
+.episode-grid .card:nth-child(7) {
+  animation-delay: 0.7s;
+}
+.episode-grid .card:nth-child(8) {
+  animation-delay: 0.8s;
+}
+.episode-grid .card:nth-child(9) {
+  animation-delay: 0.9s;
+}
+
+.episode-grid .card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 15px #ff007f;
+}
+
+.episode-grid .card h3 {
+  color: #fff;
+  margin-bottom: 0.5rem;
+}
+
+.episode-grid .card p {
+  color: #ccc;
+  font-size: 1rem;
+}
+
+.games {
+  padding: 2rem;
+  text-align: center;
+}
+
+.games h2 {
+  font-size: 2rem;
+  color: #ff007f;
+  margin-bottom: 2rem;
+}
+
+.game-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.game-grid .card {
+  background-color: #1e1e1e;
+  border: 2px solid #ff007f;
+  border-radius: 12px;
+  width: 300px;
+  padding: 1rem;
+  text-align: left;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.game-grid .card {
+  animation: fadeInUp 1s ease forwards;
+  opacity: 0; /* Ensures the animation starts from hidden */
+}
+
+.game-grid .card:nth-child(1) {
+  animation-delay: 0.1s;
+}
+.game-grid .card:nth-child(2) {
+  animation-delay: 0.2s;
+}
+.game-grid .card:nth-child(3) {
+  animation-delay: 0.3s;
+}
+.game-grid .card:nth-child(4) {
+  animation-delay: 0.4s;
+}
+.game-grid .card:nth-child(5) {
+  animation-delay: 0.5s;
+}
+.game-grid .card:nth-child(6) {
+  animation-delay: 0.6s;
+}
+
+.game-grid .card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 15px #ff007f;
+}
+
+.game-grid .card h3 {
+  color: #fff;
+  margin-bottom: 0.5rem;
+}
+
+.game-grid .card p {
+  color: #ccc;
+  font-size: 1rem;
+}
+
+.reviews {
+  margin-top: 4rem;
+  text-align: center;
+}
+
+.reviews h2 {
+  font-size: 2rem;
+  color: #ff007f;
+  margin-bottom: 2rem;
+}
+
+.review-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+.review-card {
+  background-color: #1e1e1e;
+  border: 2px solid #ff007f;
+  border-radius: 10px;
+  width: 280px;
+  padding: 1rem;
+  text-align: left;
+  transition: 0.3s ease;
+}
+
+.review-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 10px #ff007f;
+}
+
+.review-card h4 {
+  color: #fff;
+  margin-bottom: 0.5rem;
+}
+
+.review-card p {
+  color: #ccc;
+  font-size: 0.95rem;
+}
+
+.about {
+  padding: 3rem 2rem;
+  max-width: 800px;
+  margin: auto;
+  text-align: left;
+}
+
+.about h2 {
+  font-size: 2rem;
+  color: #ff007f;
+  margin-bottom: 1rem;
+}
+
+.about p {
+  font-size: 1.1rem;
+  color: #ddd;
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+}
+
+.about-us {
+  max-width: 900px;
+  margin: 2rem auto 4rem;
+  padding: 2rem;
+  /* Removed box styling: background, border, border-radius */
+  color: #ddd;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+}
+
+.about-us h1 {
+  color: #ff007f;
+  font-size: 2.2rem;
+  margin-bottom: 1rem;
+  border-bottom: 2px solid #ff007f;
+  padding-bottom: 0.3rem;
+}
+
+.about-us p {
+  font-size: 1.1rem;
+  margin-bottom: 1.2rem;
+}
+
+.about-us ul {
+  list-style-type: square;
+  padding-left: 1.5rem;
+  margin-bottom: 1.5rem;
+  color: #ccc;
+}
+
+.about-us ul li {
+  margin-bottom: 0.7rem;
+  font-size: 1.05rem;
+}
+
+.about-us ul li strong {
+  color: #ff4da6;
+}
+
+@media (max-width: 600px) {
+  .about-us {
+    padding: 1rem;
+    margin: 1rem;
+  }
+
+  .about-us h1 {
+    font-size: 1.6rem;
+  }
+
+  .about-us p,
+  .about-us ul li {
+    font-size: 1rem;
+  }
+}
+
+.contact {
+  padding: 2rem;
+  text-align: center;
+}
+
+.contact h2 {
+  color: #ff007f;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.contact p {
+  color: #ccc;
+  margin-bottom: 2rem;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  max-width: 500px;
+  margin: auto;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 0.8rem;
+  border: none;
+  border-radius: 5px;
+  background: #2b2b2b;
+  color: #fff;
+  font-size: 1rem;
+}
+
+.contact-form button {
+  background-color: #ff007f;
+  color: white;
+  padding: 0.8rem 1.5rem;
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.contact-form button:hover {
+  background-color: #e60073;
+}
+
+/* Toggle Theme Button */
+.theme-btn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #ff007f;
+  color: white;
+  border: none;
+  padding: 0.6rem 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+  z-index: 1000;
+}
+
+/* Dark Theme Fixes */
+.dark-theme {
+  background-color: #fff !important;
+  color: #000 !important;
+}
+
+.dark-theme header,
+.dark-theme footer {
+  background-color: #ddd !important;
+  color: #ff007f !important;
+}
+
+.dark-theme nav a {
+  color: #ff007f !important;
+}
+
+.dark-theme nav a:hover,
+.dark-theme nav a.active {
+  color: #fff !important;
+  background: #000 !important;
+}
+
+.dark-theme .contact p {
+  color: #fff !important;
+}
+
+.dark-theme .contact-form input,
+.dark-theme .contact-form textarea {
+  background-color: #f0f0f0;
+  color: #000;
+  border: 1px solid #999;
+}
+
+.dark-theme .contact-form input::placeholder,
+.dark-theme .contact-form textarea::placeholder {
+  color: #555;
+}
+
+body.dark-theme .about-us {
+  color: #000 !important;
+}
+
+body.dark-theme .about-us h1 {
+  color: #ff007f !important;
+}
+
+body.dark-theme .about-us p {
+  color: #000 !important;
+}
+
+body.dark-theme .about-us ul,
+body.dark-theme .about-us li {
+  color: #000 !important;
+}
+
+body.light-theme .hero-left {
+  color: #fff !important;
+}
+
+body.light-theme .about-us {
+  color: #fff !important;
+}
+
+body.light-theme .about-us h1 {
+  color: #ff007f !important;
+}
+
+body.light-theme .about-us p {
+  color: #fff !important;
+}
+
+body.light-theme .about-us ul,
+body.light-theme .about-us li {
+  color: #fff !important;
+}
+
+/* Make "Squid Game Zone" pink in light theme */
+.light-theme .main-heading {
+  color: #ff007f !important;
+}
+
+/* Footer */
+footer {
+  background: #222;
+  color: #aaa;
+  text-align: center;
+  padding: 1rem;
+  margin-top: 2rem;
+}
