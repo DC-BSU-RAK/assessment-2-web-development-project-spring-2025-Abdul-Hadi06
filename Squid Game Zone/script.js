@@ -1,5 +1,5 @@
+// === Highlight current nav link ===
 document.addEventListener("DOMContentLoaded", () => {
-  // === Highlight current nav link ===
   const links = document.querySelectorAll("nav a");
   links.forEach(link => {
     if (window.location.href.includes(link.getAttribute("href"))) {
