@@ -1,3 +1,4 @@
+/* Main Body Styling */
 body {
   margin: 0;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -8,13 +9,14 @@ body {
   overflow-x: hidden;
 }
 
+/* Background Animation */
 @keyframes bgAnim {
   0% {background-position: 0% 50%;}
   50% {background-position: 100% 50%;}
   100% {background-position: 0% 50%;}
 }
 
-/* Header and Nav */
+/* Header Styling */
 header {
   background-color: #e60073;
   padding: 1rem;
@@ -31,6 +33,7 @@ header h1 {
   text-shadow: 0 0 8px #000;
 }
 
+/* Navigation Menu Styling */
 nav ul {
   list-style: none;
   padding: 0;
@@ -68,7 +71,7 @@ nav a:hover {
   border-radius: 5px;
 }
 
-/* Hero Section */
+/* Main Hero Section */
 .hero-v2 {
   position: relative;
   display: flex;
@@ -79,6 +82,7 @@ nav a:hover {
   overflow: hidden;
 }
 
+/* Background Image on the Right Side */
 .hero-v2::after {
   content: '';
   position: absolute;
@@ -86,7 +90,7 @@ nav a:hover {
   right: -80px;
   bottom: 0;
   width: 50%;
-  background-image: url('Images/worker.png');
+  background-image: url('Images/worker.png'); /* Adds the worker image */
   background-repeat: no-repeat;
   background-position: center right;
   background-size: contain;
@@ -95,7 +99,7 @@ nav a:hover {
   z-index: 0;
 }
 
-/* Glassmorphism for Hero Text */
+/* Content Box on the Left Side */
 .hero-left {
   z-index: 1;
   max-width: 600px;
@@ -119,15 +123,18 @@ nav a:hover {
   }
 }
 
+/* Typing Animation */
 @keyframes typing {
   from { width: 0; }
   to { width: 100%; }
 }
 
+/* Blinking Cursor */
 @keyframes blink {
   50% { border-color: transparent; }
 }
 
+/* Animated Heading with Typing Effect */
 .hero-left h2 {
   overflow: hidden;
   white-space: nowrap;
@@ -138,6 +145,7 @@ nav a:hover {
     blink 0.75s step-end infinite;
 }
 
+/* Text Styling */
 .hero-left p {
   font-size: 1.15rem;
   color: #e6e6e6;
@@ -145,7 +153,7 @@ nav a:hover {
   line-height: 1.6;
 }
 
-/* Glowing Button */
+/* Explore Button Styling */
 .explore-btn {
   background-color: transparent;
   color: white;
@@ -160,22 +168,25 @@ nav a:hover {
   transition: transform 0.3s ease, box-shadow 0.3s;
 }
 
+/* Animation for Glowing Button */
 @keyframes pulseGlow {
   0% { box-shadow: 0 0 20px #ff007f; }
   50% { box-shadow: 0 0 40px #ff007f; }
   100% { box-shadow: 0 0 20px #ff007f; }
 }
 
+/* Apply Pulse Animation to Button */
 .explore-btn {
   animation: pulseGlow 2s infinite;
 }
 
+/* Button Hover Effect */
 .explore-btn:hover {
   transform: scale(1.1);
   box-shadow: 0 0 30px #ff007f, 0 0 60px #ff007f inset;
 }
 
-/* Floating Symbols in Background */
+/* Floating Animation for Symbols in Background */
 @keyframes float {
   0% {transform: translateY(0) rotate(0deg);}
   50% {transform: translateY(-20px) rotate(20deg);}
@@ -199,6 +210,7 @@ body::after {
   animation-delay: 2s;
 }
 
+/* Extra Symbols in the Center Background */
 .symbols {
   position: absolute;
   top: 50%;
@@ -219,9 +231,11 @@ body::after {
   display: inline-block;
 }
 
+/* Delay for Each Symbol to Bounce at Different Times */
 .symbols .triangle { animation-delay: 0.3s; }
 .symbols .square   { animation-delay: 0.6s; }
 
+/* Glowing and Bouncing Effect */
 @keyframes glowBounce {
   0%, 100% {
     transform: translateY(0);
@@ -233,42 +247,31 @@ body::after {
   }
 }
 
+/* Centered Float for Symbols */
 @keyframes float {
   0%, 100% { transform: translate(-50%, -50%) translateY(0); }
   50%      { transform: translate(-50%, -50%) translateY(-10px); }
 }
 
-@keyframes floatDiagonal {
-  0% {
-    transform: translate(0, 0) rotate(0deg);
-    opacity: 0.2;
-  }
-  50% {
-    opacity: 0.4;
-  }
-  100% {
-    transform: translate(200px, -200px) rotate(360deg);
-    opacity: 0.2;
-  }
-}
-
+/* Container for the spinning symbol */
 .spinning-symbol {
   position: fixed;
   top: 60%;
   left: 60%;
   width: 300px;
   height: 300px;
-  background-image: url('Images/symbol.png'); /* Use transparent PNG (△ ○ □) */
+  background-image: url('Images/symbol.png');
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
   transform: translate(-50%, -50%);
-  opacity: 0.03; /* Very faint */
-  z-index: 0; /* Behind everything */
+  opacity: 0.03;
+  z-index: 0;
   animation: spinSymbol 60s linear infinite;
   pointer-events: none;
 }
 
+/* Spinning Animation for the symbol to spin */
 @keyframes spinSymbol {
   from {
     transform: translate(-50%, -50%) rotate(0deg);
@@ -278,6 +281,7 @@ body::after {
   }
 }
 
+/* Container for the floating mask icon */
 .floating-mask-icon {
   position: fixed;
   top: 20%;
@@ -288,20 +292,30 @@ body::after {
   animation: float-diagonal 30s linear infinite;
 }
 
+/* Styling of the image */
 .floating-mask-icon img {
   height: 300px;
   width: auto;
 }
 
+/* Keyframes for the diagonal floating movement */
 @keyframes float-diagonal {
   0% {
     transform: translate(0, 0) rotate(0deg);
   }
+    /* Moves diagonally across the screen and spin 360 degrees */
   100% {
     transform: translate(200vw, 200vh) rotate(360deg);
   }
 }
 
+/* This styles the trailer section by centering the text and adding space around it */
+.trailer-section {
+  text-align: center;
+  padding: 3rem 1rem;
+}
+
+/* Styling of the iframe inside the trailer section */
 .trailer iframe {
   width: 90%;
   max-width: 800px;
@@ -310,22 +324,20 @@ body::after {
   border-radius: 10px;
 }
 
-.trailer-section {
-  text-align: center;
-  padding: 3rem 1rem;
-}
-
+/* Players section container with padding and center text */
 .players {
   padding: 2rem;
   text-align: center;
 }
 
+/* Styling heading for players section */
 .players h2 {
   font-size: 2rem;
   margin-bottom: 2rem;
   color: #ff007f;
 }
 
+/* Grid layout for player cards with wrapping and spacing */
 .players-grid {
   display: flex;
   flex-wrap: wrap;
@@ -333,6 +345,7 @@ body::after {
   gap: 2rem;
 }
 
+/* Animation for cards to fade in and move up */
 @keyframes fadeInUp {
   0% {
     opacity: 0;
@@ -344,7 +357,8 @@ body::after {
   }
 }
 
-.card {
+/* Styling of each player card */
+.players-grid .card {
   background-color: #1a1a1a;
   border: 2px solid #ff007f;
   border-radius: 12px;
@@ -353,11 +367,13 @@ body::after {
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
+/* Animation of cards by fading in and moving upward smoothly */
 .players-grid .card {
   animation: fadeInUp 1s ease forwards;
-  opacity: 0; /* Ensures the animation starts from hidden */
+  opacity: 0; 
 }
 
+/* Add small delay for each card to appear one by one */
 .players-grid .card:nth-child(1) {
   animation-delay: 0.1s;
 }
@@ -383,39 +399,46 @@ body::after {
   animation-delay: 0.8s;
 }
 
-.card:hover {
+/* Hover effect for cards to make them slightly bigger and glowing */
+.players-grid .card:hover {
   transform: scale(1.05);
   box-shadow: 0 0 15px #ff007f;
 }
 
-.card img {
+/* Styling player image inside the card */
+.players-grid .card img {
   width: 100%;
   height: 300px;
   object-fit: cover;
   border-radius: 10px;
 }
 
-.card h3 {
+/* Styling player name inside the card */
+.players-grid .card h3 {
   color: #fff;
   margin: 0.5rem 0;
 }
 
-.card p {
+/* Styling player description inside the card */
+.players-grid .card p {
   font-size: 0.95rem;
   color: #ccc;
 }
 
+/* Episodes section container with padding and center text */
 .episodes {
   padding: 2rem;
   text-align: center;
 }
 
+/* Styling title for episodes */
 .episodes h2 {
   font-size: 2rem;
   color: #ff007f;
   margin-bottom: 2rem;
 }
 
+/* Grid layout for episode cards with wrapping and spacing */
 .episode-grid {
   display: flex;
   flex-wrap: wrap;
@@ -423,6 +446,7 @@ body::after {
   gap: 2rem;
 }
 
+/* Styling of each episode card */
 .episode-grid .card {
   background-color: #1c1c1c;
   border: 2px solid #ff007f;
@@ -433,11 +457,13 @@ body::after {
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
+/* Animation of cards by fading in and moving upward smoothly */
 .episode-grid .card {
   animation: fadeInUp 1s ease forwards;
   opacity: 0; /* Ensures the animation starts from hidden */
 }
 
+/* Add small delay for each card to appear one by one */
 .episode-grid .card:nth-child(1) {
   animation-delay: 0.1s;
 }
@@ -466,32 +492,38 @@ body::after {
   animation-delay: 0.9s;
 }
 
+/* Hover effect for cards to make them slightly bigger and glowing */
 .episode-grid .card:hover {
   transform: scale(1.05);
   box-shadow: 0 0 15px #ff007f;
 }
 
+/* Styling episode title inside each card */
 .episode-grid .card h3 {
   color: #fff;
   margin-bottom: 0.5rem;
 }
 
+/* Styling episode description inside each card */
 .episode-grid .card p {
   color: #ccc;
   font-size: 1rem;
 }
 
+/* Games section container with padding and center text */
 .games {
   padding: 2rem;
   text-align: center;
 }
 
+/* Styling heading for games section */
 .games h2 {
   font-size: 2rem;
   color: #ff007f;
   margin-bottom: 2rem;
 }
 
+/* Grid layout for game cards with wrapping and spacing */
 .game-grid {
   display: flex;
   flex-wrap: wrap;
@@ -499,6 +531,7 @@ body::after {
   gap: 2rem;
 }
 
+/* Styling of each game card */
 .game-grid .card {
   background-color: #1e1e1e;
   border: 2px solid #ff007f;
@@ -509,11 +542,13 @@ body::after {
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
+/* Animation of cards by fading in and moving upward smoothly */
 .game-grid .card {
   animation: fadeInUp 1s ease forwards;
   opacity: 0; /* Ensures the animation starts from hidden */
 }
 
+/* Add small delay for each card to appear one by one */
 .game-grid .card:nth-child(1) {
   animation-delay: 0.1s;
 }
@@ -533,32 +568,38 @@ body::after {
   animation-delay: 0.6s;
 }
 
+/* Hover effect for cards to make them slightly bigger and glowing */
 .game-grid .card:hover {
   transform: scale(1.05);
   box-shadow: 0 0 15px #ff007f;
 }
 
+/* Styling game title inside each card */
 .game-grid .card h3 {
   color: #fff;
   margin-bottom: 0.5rem;
 }
 
+/* Styling game description inside each card */
 .game-grid .card p {
   color: #ccc;
   font-size: 1rem;
 }
 
+/* Container for the reviews section with top margin and center text */
 .reviews {
   margin-top: 4rem;
   text-align: center;
 }
 
+/* Styling the title of the reviews section */
 .reviews h2 {
   font-size: 2rem;
   color: #ff007f;
   margin-bottom: 2rem;
 }
 
+/* Grid layout for review cards with wrapping and spacing */
 .review-grid {
   display: flex;
   flex-wrap: wrap;
@@ -566,6 +607,7 @@ body::after {
   gap: 1.5rem;
 }
 
+/* Styling for each review card */
 .review-card {
   background-color: #1e1e1e;
   border: 2px solid #ff007f;
@@ -576,21 +618,25 @@ body::after {
   transition: 0.3s ease;
 }
 
+/* Hover effect to move card up and add a glowing shadow */
 .review-card:hover {
   transform: translateY(-5px);
   box-shadow: 0 0 10px #ff007f;
 }
 
+/* Styling of review title inside the card */
 .review-card h4 {
   color: #fff;
   margin-bottom: 0.5rem;
 }
 
+/* Styling of review text inside the card */
 .review-card p {
   color: #ccc;
   font-size: 0.95rem;
 }
 
+/* Main about section container */
 .about {
   padding: 3rem 2rem;
   max-width: 800px;
@@ -598,12 +644,14 @@ body::after {
   text-align: left;
 }
 
+/* Styling about section heading */
 .about h2 {
   font-size: 2rem;
   color: #ff007f;
   margin-bottom: 1rem;
 }
 
+/* Styling about section paragraph */
 .about p {
   font-size: 1.1rem;
   color: #ddd;
@@ -611,6 +659,7 @@ body::after {
   line-height: 1.6;
 }
 
+/* Detailed About Us section container */
 .about-us {
   max-width: 900px;
   margin: 2rem auto 4rem;
@@ -621,6 +670,7 @@ body::after {
   line-height: 1.6;
 }
 
+/* Main heading in About Us section */
 .about-us h1 {
   color: #ff007f;
   font-size: 2.2rem;
@@ -629,11 +679,13 @@ body::after {
   padding-bottom: 0.3rem;
 }
 
+/* Paragraph text in About Us section */
 .about-us p {
   font-size: 1.1rem;
   margin-bottom: 1.2rem;
 }
 
+/* Styling list in About Us section */
 .about-us ul {
   list-style-type: square;
   padding-left: 1.5rem;
@@ -641,6 +693,7 @@ body::after {
   color: #ccc;
 }
 
+/* Styling list items */
 .about-us ul li {
   margin-bottom: 0.7rem;
   font-size: 1.05rem;
@@ -666,22 +719,26 @@ body::after {
   }
 }
 
+/* Contact section container with padding and center-aligned text */
 .contact {
   padding: 2rem;
   text-align: center;
 }
 
+/* Styling the title of contact section */
 .contact h2 {
   color: #ff007f;
   font-size: 2rem;
   margin-bottom: 1rem;
 }
 
+/* Paragraph under the contact title */
 .contact p {
   color: #ccc;
   margin-bottom: 2rem;
 }
 
+/* Center the form and arrange inputs in a vertical column */
 .contact-form {
   display: flex;
   flex-direction: column;
@@ -691,6 +748,7 @@ body::after {
   margin: auto;
 }
 
+/* Styling the input fields and text areas */
 .contact-form input,
 .contact-form textarea {
   width: 100%;
@@ -702,6 +760,7 @@ body::after {
   font-size: 1rem;
 }
 
+/* Styling the submit button */
 .contact-form button {
   background-color: #ff007f;
   color: white;
@@ -713,6 +772,7 @@ body::after {
   transition: background 0.3s ease;
 }
 
+/* Hover effect for the submit button */
 .contact-form button:hover {
   background-color: #e60073;
 }
@@ -731,7 +791,7 @@ body::after {
   z-index: 1000;
 }
 
-/* Dark Theme Fixes */
+/* Dark Theme */
 .dark-theme {
   background-color: #fff !important;
   color: #000 !important;
@@ -786,6 +846,7 @@ body.dark-theme .about-us li {
   color: #000 !important;
 }
 
+/* Light Theme */
 body.light-theme .hero-left {
   color: #fff !important;
 }
@@ -807,7 +868,7 @@ body.light-theme .about-us li {
   color: #fff !important;
 }
 
-/* Make "Squid Game Zone" pink in light theme */
+/* Making "Squid Game Zone" pink in light theme */
 .light-theme .main-heading {
   color: #ff007f !important;
 }
