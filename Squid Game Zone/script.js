@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
-  // ===Highlight current nav link===
+  // === Highlight current nav link ===
   const links = document.querySelectorAll("nav a");
   links.forEach(link => {
     if (window.location.href.includes(link.getAttribute("href"))) {
@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
-  // ===Fake form handler (Contact page)===
+  // === Fake form handler (Contact page) ===
   const form = document.querySelector(".contact-form");
   if (form) {
     form.addEventListener("submit", function(e) {
@@ -17,7 +17,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // ===Theme Toggle Button===
+  // === Theme Toggle Button ===
   const themeBtn = document.getElementById("theme-toggle");
   if (themeBtn) {
     themeBtn.addEventListener("click", () => {
