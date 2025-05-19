@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Contact - Squid Game Hub</title>
+  <title>Reviews - Squid Game Zone</title>
   <!--Linking the CSS file for styling-->
   <link rel="stylesheet" href="style.css"/>
 </head>
@@ -25,22 +25,30 @@
         <li><a href="episodes.html">Episodes</a></li>
         <li><a href="games.html">Games</a></li>
         <li><a href="about.html">About Us</a></li>
-        <li><a href="contact.html" class="active">Contact</a></li>
+        <li><a href="reviews.html" class="active">Reviews</a></li>
       </ul>
     </nav>
   </header>
 
-  <!--Main contact section of the page-->
-  <section class="contact">
-    <h2>Contact Us</h2>
+  <!--Main reviews section of the page-->
+  <section class="reviews">
+    <h2>Share Your Review</h2>
     <!--Small text to tell users what this form is for-->
-    <p>If you have fan theories, suggestions or just love Squid Game, send us a message!</p>
-    <!-- Contact form for users to send messages -->
-    <form class="contact-form" action="#">
+    <p>Love Squid Game? Share your reviews and rate the game below!</p>
+    <!-- Reviews form for users to give reviews -->
+    <form class="reviews-form" action="#">
       <input type="text" placeholder="Your Name" required>
-      <input type="email" placeholder="Your Email" required>
-      <textarea placeholder="Your Message" rows="5" required></textarea>
-      <button type="submit">Send Message</button>
+      <textarea placeholder="Write your review..." rows="5" required></textarea>
+      <!-- Star Rating Dropdown -->
+      <select required>
+        <option value="">Rate the Game</option>
+        <option value="5">★★★★★ - Masterpiece</option>
+        <option value="4">★★★★☆ - Great</option>
+        <option value="3">★★★☆☆ - Good</option>
+        <option value="2">★★☆☆☆ - Okay</option>
+        <option value="1">★☆☆☆☆ - Poor</option>
+      </select>
+      <button type="submit">Submit Review</button>
     </form>
   </section>
 
@@ -51,6 +59,7 @@
   
   <!--Theme toggle button to switch between dark/light mode-->
   <button id="theme-toggle" class="theme-btn">Toggle Theme</button>
+
   <!--Link to JavaScript-->
   <script src="script.js"></script>
 

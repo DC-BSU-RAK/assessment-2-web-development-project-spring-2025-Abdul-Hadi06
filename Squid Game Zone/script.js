@@ -7,15 +7,15 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
-  // === Fake form handler (Contact page) ===
-  const form = document.querySelector(".contact-form");
-  if (form) {
-    form.addEventListener("submit", function(e) {
-      e.preventDefault();
-      alert("Thanks for your message! We'll get back to you soon.");
-      form.reset();
-    });
-  }
+  // === Fake form handler (Reviews page) ===
+const reviewForm = document.querySelector(".reviews-form");
+if (reviewForm) {
+  reviewForm.addEventListener("submit", function(e) {
+    e.preventDefault();
+    alert("Thanks for your review! We appreciate your feedback.");
+    reviewForm.reset();
+  });
+}
 
   // === Theme Toggle Button ===
   const themeBtn = document.getElementById("theme-toggle");

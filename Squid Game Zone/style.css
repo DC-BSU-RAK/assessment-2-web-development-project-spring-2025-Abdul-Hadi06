@@ -734,27 +734,27 @@ body::after {
   }
 }
 
-/* Contact section container with padding and center-aligned text */
-.contact {
+/* Reviews section container with padding and center-aligned text */
+.reviews {
   padding: 2rem;
   text-align: center;
 }
 
-/* Styling the title of contact section */
-.contact h2 {
+/* Styling the title of reviews section */
+.reviews h2 {
   color: #ff007f;
   font-size: 2rem;
   margin-bottom: 1rem;
 }
 
-/* Paragraph under the contact title */
-.contact p {
+/* Paragraph under the reviews title */
+.reviews p {
   color: #ccc;
   margin-bottom: 2rem;
 }
 
 /* Center the form and arrange inputs in a vertical column */
-.contact-form {
+.reviews-form {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -764,8 +764,8 @@ body::after {
 }
 
 /* Styling the input fields and text areas */
-.contact-form input,
-.contact-form textarea {
+.reviews-form input,
+.reviews-form textarea {
   width: 100%;
   padding: 0.8rem;
   border: none;
@@ -775,8 +775,18 @@ body::after {
   font-size: 1rem;
 }
 
+.reviews-form select {
+  width: 100%;
+  padding: 15px;
+  background-color: #2b2b2b;
+  border: none;
+  border-radius: 5px;
+  color: #fff;
+  font-size: 1rem;
+}
+
 /* Styling the submit button */
-.contact-form button {
+.reviews-form button {
   background-color: #ff007f;
   color: white;
   padding: 0.8rem 1.5rem;
@@ -788,7 +798,7 @@ body::after {
 }
 
 /* Hover effect for the submit button */
-.contact-form button:hover {
+.reviews-form button:hover {
   background-color: #e60073;
 }
 
