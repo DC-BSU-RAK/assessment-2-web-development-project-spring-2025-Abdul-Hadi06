@@ -838,19 +838,19 @@ body::after {
   background: #000 !important;
 }
 
-.dark-theme .contact p {
+.dark-theme .reviews p {
   color: #fff !important;
 }
 
-.dark-theme .contact-form input,
-.dark-theme .contact-form textarea {
+.dark-theme .reviews-form input,
+.dark-theme .reviews-form textarea {
   background-color: #f0f0f0;
   color: #000;
   border: 1px solid #999;
 }
 
-.dark-theme .contact-form input::placeholder,
-.dark-theme .contact-form textarea::placeholder {
+.dark-theme .reviews-form input::placeholder,
+.dark-theme .reviews-form textarea::placeholder {
   color: #555;
 }
 
@@ -915,14 +915,14 @@ body.light-theme .about-us li {
     width: 90%;
   }
 
-  /* Make contact form adjust for small screens */
-  .contact-form {
+  /* Make reviews form adjust for small screens */
+  .reviews-form {
     width: 100%;
     padding: 1rem;
   }
 
-  .contact-form input,
-  .contact-form textarea {
+  .reviews-form input,
+  .reviews-form textarea {
     font-size: 0.95rem;
   }
 
@@ -938,7 +938,7 @@ body.light-theme .about-us li {
 
   /* Center text inside sections for mobile */
   .about,
-  .contact {
+  .reviews {
     text-align: center;
   }
 }
